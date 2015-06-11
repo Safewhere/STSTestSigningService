@@ -45,7 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dk.nita.saml20">
+    <Reference Include="dk.nita.saml20, Version=1.7.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External assemblies\dk.nita.saml20.dll</HintPath>
     </Reference>
     <Reference Include="Kombit.Samples.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
