@@ -1,0 +1,125 @@
+﻿{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Security Token Service Test Signing",
+        "description": "Security Token Service Test Signing",
+        "contact": {
+            "name": "Safewhere"
+        }
+    },
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/api",
+    "paths": {
+        "/SecurityTokenServiceTestSigning": {
+            "post": {
+                "tags": [
+                    "SecurityTokenServiceTestSigning"
+                ],
+                "summary": "Update the request security token response",
+                "description": "API to update the request security token response. Includes signature, NotBefore, NotOnOrAfter",
+                "operationId": "SecurityTokenServiceTestSigning_Post",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "originRstr",
+                        "in": "body",
+                        "description": "The Rstr xml string in url-encoded base64 format",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response. Return the update rstr xml string in url-encoded base64 format"
+                    },
+                    "400": {
+                        "description": "Invalid data supplied",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Unknown id",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflicting request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected server error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "503": {
+                        "description": "Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SecurityTokenServiceTestSigning"
+                ],
+                "summary": "Test the service",
+                "description": "GET doesn't make sense because of message size will definitely exceed the limit",
+                "operationId": "SecurityTokenServiceTestSigning_Get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "message"
+            ],
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

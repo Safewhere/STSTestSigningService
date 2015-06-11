@@ -1,0 +1,3 @@
+Certificate: CertificateIdp.p12
+Password: Test1234
+Thumbprint: CA95B2F383BEF8144500CD74B88BC42CD3DE936C
