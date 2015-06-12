@@ -181,7 +181,8 @@ namespace Kombit.Samples.STSTestSigningService.Code
         public static SecurityToken ToSamlSecurityToken(GenericXmlSecurityToken token)
         {
             var handlers = SecurityTokenHandlerCollection.CreateDefaultSecurityTokenHandlerCollection();
-
+            var saml2Handler = new CustomSaml2SecurityTokenHandler();
+            handlers.AddOrReplace(saml2Handler);
             var reader = new XmlTextReader(new StringReader(token.TokenXml.OuterXml));
             return handlers.ReadToken(reader);
         }
