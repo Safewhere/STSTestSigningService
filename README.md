@@ -1,6 +1,8 @@
 # STSTestSigningService
 STS Test Signing Service
 
+Document reference: D.03.07.00012
+
 ## <a name=“introduction”></a>Introduction
 The following document describes how to configure the .Net-based Test Signing Service. After completing this guide, the .Net-based Test Signing Service will be configured.
 
